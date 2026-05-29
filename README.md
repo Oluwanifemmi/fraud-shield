@@ -60,7 +60,7 @@ Assuming 1M transactions/month, 0.6% fraud rate, avg. fraud value $150:
 | **Saving vs industry average** | **~$153,000/month** |
 
 ---
-
+## 🔮 Future Improvements
 
 
 - [ ] Build a unified sklearn `Pipeline` to streamline preprocessing and deployment
