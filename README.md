@@ -4,7 +4,7 @@
 
 ## 🏆 Solution & Results
 
-A business-driven fraud detection system comparing three ML models, with threshold optimisation giving risk teams full control over detection sensitivity.
+A business driven fraud detection system comparing three ML models, with threshold optimisation giving risk teams full control over detection sensitivity.
 
 | Model | Precision | Recall | ROC-AUC | Verdict |
 |-------|-----------|--------|---------|---------|
@@ -12,17 +12,17 @@ A business-driven fraud detection system comparing three ML models, with thresho
 | Logistic Regression | ~0.00 | ~0.00 | ~0.50 | ❌ Failed on imbalanced data |
 | **XGBoost (Final)** | **0.61** | **0.95** | **0.97** | ✅ **Production winner** |
 
-**XGBoost catches 95% of all fraud** — only 5 in every 100 fraudulent transactions slip through undetected.
+**XGBoost catches 95% of all fraud** : only 5 in every 100 fraudulent transactions slip through undetected.
 
 ---
 
-## 🎛️ Threshold Optimisation — The Business Control Lever
+## 🎛️ Threshold Optimisation :The Business Control Lever
 
 | Threshold | Best For |
 |-----------|----------|
-| **0.1** | High-value transaction monitoring — maximum fraud capture |
-| **0.3** | Balanced detection — recommended for operations teams |
-| **0.5** | Conservative flagging — fewer customer disruptions |
+| **0.1** | High-value transaction monitoring : maximum fraud capture |
+| **0.3** | Balanced detection :recommended for operations teams |
+| **0.5** | Conservative flagging :fewer customer disruptions |
 
 ---
 
@@ -30,21 +30,21 @@ A business-driven fraud detection system comparing three ML models, with thresho
 
 | Feature | What It Detects |
 |---------|----------------|
-| `time_since_last_transaction` | Card testing behavior — fraudsters make rapid small charges to verify cards |
+| `time_since_last_transaction` | Card testing behavior , fraudsters make rapid small charges to verify cards |
 | `is_rapid_txn` | Binary flag: transactions < 60 seconds apart are a strong fraud signal |
 | `distance_from_center` | Euclidean distance from the customer's typical transaction geography |
 | `age` | Derived from DOB — certain age groups show different fraud risk profiles |
-| `season_of_day` | Fraud spikes at Night — the model captures this pattern |
+| `season_of_day` | Fraud spikes at Night , the model captures this pattern |
 | `time_of_the_week` | Weekend vs. weekday spending patterns differ between fraud and legitimate use |
-| Cyclical time encoding | Hour, day, month encoded as sine/cosine — the model understands that 11pm and 1am are "close," not numerically far apart |
+| Cyclical time encoding | Hour, day, month encoded as sine/cosine . The model understands that 11pm and 1am are "close," not numerically far apart |
 
 ---
 
 ## 📊 Statistical Validation
 
-**Mann-Whitney U Test** confirmed that fraudulent transactions have significantly higher amounts (p < 0.05), validating `amt` as a legitimate risk signal — important for regulatory defensibility in banking and insurance.
+**Mann-Whitney U Test** confirmed that fraudulent transactions have significantly higher amounts (p < 0.05), validating `amt` as a legitimate risk signal. It is important for regulatory defensibility in banking and insurance.
 
-> ✅ **Reject H₀** — Fraud transactions have significantly higher amounts.
+> ✅ **Reject H₀** : Fraud transactions have significantly higher amounts.
 
 ---
 
@@ -66,13 +66,13 @@ Assuming 1M transactions/month, 0.6% fraud rate, avg. fraud value $150:
 - [ ] Build a unified sklearn `Pipeline` to streamline preprocessing and deployment
 - [ ] Add a Precision-Recall curve visualization across all threshold values
 - [ ] Implement a business cost matrix (assigning dollar values to false negatives vs false positives)
-- [ ] Explore real-time inference with a FastAPI endpoint
+- [ ] Explore real time inference with a FastAPI endpoint
 - [ ] Test on the holdout `fraudTest.csv` for final generalization check
 - [ ] Add model monitoring/drift detection for production use
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Author *@Oluwatosin Nifemi Abimbola
 
 A machine learning project with a focus on **business impact**.
 
@@ -80,4 +80,4 @@ The core question driving every decision: *"Would a fraud team actually use this
 
 ---
 
-*If you found this useful, consider starring the repo ⭐*@Oluwatosin Abimbola
+*If you found this useful, consider starring the repo ⭐
